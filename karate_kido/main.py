@@ -47,11 +47,13 @@ def start_game(coordinates):
             pyautogui.press('left')
             if not compare_colors(left_color, get_average_color(left_coords[0], left_coords[1])):
                 position = 1
+                pyautogui.press('right')
                 print("Переход на правый участок")
         else:
             # Проверяем изменение цвета на правом участке
             pyautogui.press('right')
             if not compare_colors(right_color, get_average_color(right_coords[0], right_coords[1])):
+                pyautogui.press('left')
                 position = 0
                 print("Переход на левый участок")
 
